@@ -1,0 +1,39 @@
+% My Solutions to Exercises from TAOCP
+
+I've kept a copy of Donald Knuth's [The Art of Computer
+Programming](http://www-cs-faculty.stanford.edu/~uno/taocp.html) on my
+top shelf for a couple of years now. It's the third edition box set, complete with
+TeX typesetting and beautiful Computer Modern typefaces. I occasionally flip
+through it randomly just to admire the print. I've also referenced TAOCP from
+time to time for things like sorting algorithms and binary heaps. But I
+initially bought TAOCP to study at my leisure rather than as a reference.
+
+
+One of the suggestions in the preface to Volume 1 is to work all of the
+recommended exercises. The problem I have is that it's difficult to keep myself
+honest and actually do the exercises without skipping them, so to that end I
+decided to post my solutions (and my progress) here. Some of my solutions are
+probably incomplete, copied from the back, or just plain wrong. I try to make
+notes where I can of my thought process while solving these exercises, for my
+own benefit. I also make notes where I think my solution is dubious or
+incorrect.
+
+I know that all of these solutions are given in the back of the book. The
+solutions given here are for my own benefit. Any help they might be to
+others is purely incidental.
+
+Feedback on any of my solutions is very welcome.
+
+# Exercise Solutions by Section
+
+## Section 1.1 Algorithms
+
+### Exercise 1.1.1 [10]
+
+TODO: Figure out how to link to other articles
+
+blah
+
+$$
+\text{sinc}\,x = \frac{\sin \pi x}{\pi x}
+$$
