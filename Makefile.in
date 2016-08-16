@@ -1,0 +1,71 @@
+version = 0.0.1
+tarname = glines
+webdistdir = $(tarname)-web-$(version)
+export sitename = Glines.net
+export siteurl = http://glines.net
+
+pages = index cv
+pages_html = $(patsubst %,%.html,$(pages))
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+top_builddir = @top_builddir@
+VPATH = @srcdir@
+
+all: $(webdistdir)
+
+pages: $(pages_html) articles productions
+
+upload: $(webdistdir).tar.gz
+	echo TODO
+
+$(webdistdir).tar.gz:
+	tar chzf $(distdir)
+
+$(webdistdir): pages
+	mkdir -p $(webdistdir)
+	cp index.html $(webdistdir)/
+	mkdir -p $(webdistdir)/include
+	cp include/style.css $(webdistdir)/include/
+	mkdir -p $(webdistdir)/articles
+	cp articles/{index,pandoc,taocp,windows_internals,matrix_palette_skinning}.html $(webdistdir)/articles/
+	mkdir -p $(webdistdir)/productions
+	cp productions/*.html $(webdistdir)/productions/
+	cp $(top_srcdir)/productions/*.png $(webdistdir)/productions/
+	for i in $$(find ./productions -mindepth 1 -maxdepth 1 -type d -exec basename '{}' \;) ; \
+        do \
+		mkdir -p "$(webdistdir)/productions/$$i" ; \
+		if [ -d "./productions/$$i/build" ]; then \
+			cp -r "./productions/$$i/build/"* "$(webdistdir)/productions/$$i/" ; \
+		fi ; \
+	done
+
+.SECONDEXPANSION:
+$(pages_html): $$(shell basename -s .html $$@).md \
+		$(top_srcdir)/include/template.html \
+		include
+	pandoc $< -s --mathjax \
+		--template=$(top_srcdir)/include/template.html \
+		--css=$(top_builddir)/include/style.css \
+		--variable=sitename:$(sitename) \
+		--variable=webroot:. \
+		-o $@
+
+.PHONY: include
+include:
+	$(MAKE) -C ./include
+
+.PHONY: articles
+articles: include
+	$(MAKE) -C ./articles
+
+.PHONY: productions
+productions: include
+	$(MAKE) -C ./productions
+
+.PHONY: clean
+clean:
+	-rm -f *.html
+	$(MAKE) -C ./include clean
+	$(MAKE) -C ./articles clean
+	$(MAKE) -C ./productions clean

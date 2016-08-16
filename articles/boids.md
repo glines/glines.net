@@ -1,4 +1,26 @@
-% Simulating Flocking Behavior with Boids
+% Simulating Bird Flocking Behavior with Boids
+
+<!--
+Outline:
+- Implementing the boids algorithm
+  - Boid is not an algorithm, it is an artificial intelligence stratey
+    - Describe the definition of algorithm as per Knuth, CLRS
+  - Modeling the three essential behaviors of boids (from Reynolds)
+    - Alignment
+    - Cohesion
+    - Separation
+    - Avoidance/Predation (fourth behavior optional)
+  - Survey of existing implementations
+    - Reynolds implementation <http://www.red3d.com/cwr/code/boids.lisp>
+    - <https://processing.org/examples/flocking.html>
+    - Blender
+    - My implementation
+  - Scripting boid behavior for quickly iterating
+  - Artificial intelligence for improving upon boid behavior
+
+Another article:
+- Computer vision to count boids
+-->
 
 The boid "algorithm" does not necessarily fit the definition of an algorithm in
 the strictest sense. There is no solution to the boid . The

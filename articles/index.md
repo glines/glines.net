@@ -2,9 +2,10 @@
 
 
 ## Graphics
+### [Matrix Palette Skinning](./matrix_palette_skinning.html)
 
+<!--
 ### [Loading Polygon Meshes with Flex/Bison](./meshes_flex_bison.html)
-
 ### [Depth Peeling](#)
 ### [Retro Dithering Shaders](#)
 
@@ -16,7 +17,6 @@
 ### [Modeling Bokeh Effects](#)
 
 ### [Catmull-Clark Subdivision Surfaces](#)
-
 
 ### [HDR/Bloom Effects](#)
 
@@ -44,9 +44,13 @@
 ### [Bounding Volume Hierarchy in C++](#)
 ### [Compiling C++ to HTML5 with Emscripten](#)
 
-## Miscellaneous
-
-### [Using Pandoc, Etc. To Compile Static Websites](./pandoc.html)
-### [Reverse SSH Tunnel on NixOS](./tunnel.html)
+-->
+## Books
 ### [Books I Like](./books.html)
 ### [My Solutions to Exercises from TAOCP](./taocp.html)
+### [Windows Internals Experiments](./windows_internals.html)
+
+## Miscellaneous
+
+### [Reverse SSH Tunnel on NixOS](./tunnel.html)
+### [Using Pandoc, Etc. To Compile Static Websites](./pandoc.html)

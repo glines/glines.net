@@ -1,31 +1,17 @@
-pages = index cv
-pages_html = $(patsubst %,%.html,$(pages))
+.PHONY: all
+all: build wc
 
-all: $(pages_html) articles demos projects
+.PHONY: build
+build:
+	mkdir -p ./build
+	cd ./build && ../configure && make
 
-.SECONDEXPANSION:
-$(pages_html): $$(shell basename -s .html $$@).md ./include/style.css ./include/template.html
-	pandoc $< -s --mathjax \
-    --template=./include/template.html \
-    --css=./include/style.css \
-    --variable=webroot:. \
-    -o $@
-
-.PHONY: articles
-articles:
-	$(MAKE) -C ./articles
-
-.PHONY: demos
-demos:
-	$(MAKE) -C ./demos
-
-.PHONY: projects
-projects:
-	$(MAKE) -C ./projects
-
-.PHONY: clean
 clean:
-	-rm -f *.html
-	$(MAKE) -C ./articles clean
-	$(MAKE) -C ./demos clean
-	$(MAKE) -C ./projects clean
+	cd ./build && make clean
+
+upload:
+	tar cvz -C build glinjona-web-0.0.1 | ssh -l glinjona www2.cose.isu.edu 'cd /home/glinjona/public_html && rm -rf glinjona-web-* && tar xvz'
+
+wc:
+	find . -type f \( -name '*.md' -o -name '*.tex' \) \
+		-exec cat '{}' \; | wc --words

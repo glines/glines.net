@@ -1,29 +1,35 @@
-My name is Jonathan Glines. This website is just a place I use to organize/dump
-the things I have worked on or am currently working on. This only comes after
-the realization that I can hardly keep track of these things myself.
+% Main Page
 
-This might be considered a kind of "blog", but it's really just a collection of
-tutorials for certain subjects that I'm trying to grasp, as well as a sort of
-portfolio of fun things I've done.
+##About Me
+My name is Jonathan Glines. I am a C/C++ programmer with interests in computer
+graphics, games, Japanese, and reading. If I ever had free time I would be
+programming (honestly), reading, updating this website, or hiking.
 
-##[Articles](./articles/index.html)
-Articles, tutorials, and postmortems that I've written concerning problems I've
-worked on. Most of these are written for my own benefit, but if any of these
-articles help others that's even better. Most of these articles have demos,
-example code, and printable PDF's. Each article is kind of like a
-programming blog post, except I reserve the right to revise them
-whenever my understanding of the topic changes.
+This website is where I organize/dump the things I have worked on or am
+currently working on. This might be considered a "blog" by some, but it's more
+of a collection of tutorials for subjects that I am trying to understand, as
+well as a portfolio of fun things I've done. Hopefully I can find the time to
+try more things (I have a huge backlog).
 
-##[Productions](./demos/index.html)
-A collection of some of the (mostly graphics) demos that I have come up with.
-Most of these that aren't compiled should be viewable in any modern web
-browser.
+<!--
+##Site Map
 
-##[Blog](./blog/index.html)
-This is where I write about personal things that are (usually) unrelated to
-graphics or programming.
+###[Articles](./articles/index.html)
+Articles, tutorials, and postmortems for problems I've worked on. Most of these
+are articles for my own benefit, but if you find any of them helpful that's
+even better. I try to make demos, example code, and printable PDF's along with
+each article.
+
+###[Productions](./productions/index.html)
+A collection of projects and demos I have made.  Most of these are viewable in
+any modern web browser, with more to come.
+
+###[Blog](./blog/index.html)
+This is where I will (eventually) write about personal things unrelated to
+programming.
+-->
 
 ##Contacting Me
 If you're interested in something on this site, feel free to comment on one of
 my articles, or email me directly at
-[glinjona@isu.edu](mailto:glinjona@isu.edu).
+[jonathan@glines.net](mailto:jonathan@glines.net).

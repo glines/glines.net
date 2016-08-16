@@ -1,3 +1,12 @@
 # Vim specific files
 .*.swp
 .*.swo
+
+# autotools files
+/configure
+/autom4te.cache
+
+# build files
+/build
+
+/NOTES

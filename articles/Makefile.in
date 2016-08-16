@@ -1,0 +1,70 @@
+pages = \
+  beers_law \
+  boids \
+  depth_peeling \
+  matrix_palette_skinning \
+  meshes_flex_bison \
+  octree \
+  pandoc \
+  sdf \
+  tunnel \
+  windows_internals \
+  index
+pages_html = $(patsubst %,%.html,$(pages))
+pages_pdf = $(patsubst %,%.pdf,$(pages))
+pages_md = $(patsubst %,%.md,$(pages))
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+top_builddir = @top_builddir@
+VPATH = @srcdir@
+
+all: html pdf
+
+html: $(pages_html)
+# taocp.html
+
+.SECONDEXPANSION:
+$(pages_html): $$(shell basename -s .html $$@).md \
+		$(top_srcdir)/include/template.html \
+		$(top_builddir)/include/style.css \
+    $(top_srcdir)/include/ieee.csl
+	pandoc $< -s --mathjax \
+		--csl $(top_srcdir)/include/ieee.csl \
+		--template=$(top_srcdir)/include/template.html \
+		--css=$(top_builddir)/include/style.css \
+		--variable=sitename:$(sitename) \
+		--variable=siteurl:$(siteurl) \
+		--variable=pagepath:articles/$@ \
+		--variable=webroot:.. \
+		--variable=comments:enable \
+		-o $@
+# FIXME: Get pandoc-citeproc working again
+#		--bibliography $(srcdir)/references.bib \
+
+pdf: $(pages_pdf)
+
+.SECONDEXPANSION:
+$(pages_pdf): $$(shell basename -s .pdf $$@).md \
+		$(top_srcdir)/include/ieee.csl
+	pandoc $< -s \
+		-o $@
+# FIXME: Get pandoc-citeproc working again
+#		--bibliography $(srcdir)/references.bib \
+#		--csl $(top_srcdir)/include/ieee.csl \
+
+# FIXME: Get pandoc-citeproc working again
+
+#taocp.html: taocp.tex $(wildcard $(srcdir)/taocp/*.tex) \
+#		$(top_srcdir)/include/template.html \
+#		$(top_builddir)/include/style.css
+#	pandoc $(srcdir)/taocp.tex $(srcdir)/taocp/*.tex -s --mathjax \
+#		--filter pandoc-citeproc \
+#		--template=$(top_srcdir)/include/template.html \
+#		--css=$(top_builddir)/include/style.css \
+#		--variable=sitename:$(sitename) \
+#		--variable=webroot:.. \
+#		-o $@
+
+clean:
+	-rm -f *.html *.pdf

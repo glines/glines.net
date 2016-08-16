@@ -1,0 +1,55 @@
+body {
+  background-color: #393939;
+  color: white;
+}
+
+#navigation a {
+  background-color: #4a5a5a;
+  text-decoration: none;
+  padding: 10pt;
+  margin-left: 0.5pt;
+  margin-right: 0.5pt;
+}
+
+#navigation a:link {
+  color: #7cd7d7;
+  font-style: T
+}
+
+#navigation a:visited {
+  color: #bc6cb2;
+}
+
+#navigation a:hover {
+  background-color: #5a6d6d;
+}
+
+#navigation {
+  margin-top: 15pt;
+  margin-bottom: 25pt;
+  float: right;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+#pageHeader h1 {
+  float: left;
+}
+
+#pageHeader {
+  height: 4em;
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#content {
+  background-color: #b6d3af;
+/*  background-color: #bcc5bd; */
+  color: #374379;
+  font-size: 16pt;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 20pt;
+  max-width: 40em;
+}

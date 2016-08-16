@@ -1,0 +1,11 @@
+srcdir = @srcdir@
+
+all: style.css
+
+style.css: $(srcdir)/style.css
+	cp --dereference $(srcdir)/style.css ./style.css
+
+# FIXME: This violates the principle that all autoconf distributions can be
+# built in-tree. I should disable in-tree building.
+clean:
+	-rm -f ./style.css

@@ -13,7 +13,7 @@ $endif$
 $if(keywords)$
   <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
 $endif$
-  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <title>$if(sitename)$$sitename$ - $endif$$pagetitle$</title>
   <style type="text/css">code{white-space: pre;}</style>
 $if(quotes)$
   <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
@@ -32,14 +32,29 @@ $endif$
 $for(header-includes)$
   $header-includes$
 $endfor$
+<link href='https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700,400italic' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<div id="topBanner">
 <div id="pageHeader">
-<div id="navigation">
-<a href="$webroot$/index.html">MAIN PAGE</a>
-<a href="$webroot$/articles/index.html">ARTICLES</a>
-<a href="$webroot$/demos/index.html">PRODUCTIONS</a>
-<a href="$webroot$/cv.html">CV</a>
+<ul id="navigation">
+<!--
+<li><a href="$webroot$/index.html">Main</a></li>
+<li><a href="$webroot$/articles/index.html">Articles</a></li>
+<li><a href="$webroot$/productions/index.html">Productions</a></li>
+<li><a href="$webroot$/blog/index.html">Blog</a></li>
+<li><a href="$webroot$/cv.html">CV</a></li>
+-->
+<li><a href="#">Main</a></li>
+<li><a href="#">Articles</a></li>
+<li><a href="#">Productions</a></li>
+<li><a href="#">Blog</a></li>
+<li><a href="#">CV</a></li>
+</ul>
+<div id="siteTitle">
+<h1>glines.net</h1>
+</div>
+<div style="clear: both;"></div>
 </div>
 </div>
 $for(include-before)$
@@ -66,10 +81,32 @@ $toc$
 </div>
 $endif$
 $body$
+$if(comments)$
+<div id="disqus_thread"></div>
+<script>
+    /**
+     *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    var disqus_config = function () {
+        this.page.url = "$siteurl$/$pagepath$";  // Page's canonical URL variable
+        this.page.identifier = "$pagepath$"; // Page's unique identifier variable
+    };
+    (function() {
+        var d = document, s = d.createElement('script');
+        
+        s.src = '//glines.disqus.com/embed.js';  // Includes forum shortname
+        
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+$endif$
 </div>
 <div id="pageFooter">
 <div id="contact">
-<a href="mailto:glinjona@isu.edu">glinjona@isu.edu</a>
+<a href="mailto:jonathan@glines.net">jonathan@glines.net</a>
 </div>
 Copyright 2015&ndash;2016 Jonathan Glines
 </div>

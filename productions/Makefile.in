@@ -1,0 +1,44 @@
+pages = \
+  berb \
+  pib \
+  index
+wip_pages = \
+  pib
+pages_html = $(patsubst %,%.html,$(pages))
+pages_md = $(patsubst %,%.md,$(pages))
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = @srcdir@
+
+all: html billiards
+
+html: $(pages_html)
+
+.SECONDEXPANSION:
+$(pages_html): $$(shell basename -s .html $$@).md \
+		$(top_srcdir)/include/style.css \
+		$(top_srcdir)/include/template.html
+	pandoc $< -s --mathjax \
+        	--template=$(top_srcdir)/include/template.html \
+		--css=$(top_srcdir)/include/style.css \
+		--variable=sitename:$(sitename) \
+    		--variable=webroot:.. \
+		-o $@
+
+.PHONY: berb
+berb:
+	$(MAKE) -C ./berb
+
+.PHONY: billiards
+billiards:
+	$(MAKE) -C ./billiards
+
+.PHONY: pib
+pib:
+	$(MAKE) -C ./pib
+
+clean:
+	-rm -f *.html
+	$(MAKE) -C ./berb clean
+	$(MAKE) -C ./pib clean
