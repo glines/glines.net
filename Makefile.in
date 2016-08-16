@@ -28,7 +28,7 @@ $(webdistdir): pages
 	mkdir -p $(webdistdir)/include
 	cp include/style.css $(webdistdir)/include/
 	mkdir -p $(webdistdir)/articles
-	cp articles/{index,pandoc,taocp,windows_internals,matrix_palette_skinning}.html $(webdistdir)/articles/
+	cp articles/{index,pandoc,windows_internals,matrix_palette_skinning}.html $(webdistdir)/articles/
 	mkdir -p $(webdistdir)/productions
 	cp productions/*.html $(webdistdir)/productions/
 	cp $(top_srcdir)/productions/*.png $(webdistdir)/productions/

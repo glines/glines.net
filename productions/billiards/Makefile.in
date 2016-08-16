@@ -7,7 +7,8 @@ all: build
 .PHONY: build
 build:
 	mkdir -p ./build
-	cd repo && git archive --format=tar HEAD | (cd ../build/ && tar xf -)
+	cd $(srcdir)/repo && git archive --format=tar HEAD \
+		| (cd $(shell pwd)/build/ && tar xf -)
 
 clean:
 	rm -rf ./build

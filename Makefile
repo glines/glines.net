@@ -7,7 +7,7 @@ build:
 	cd ./build && ../configure && make
 
 clean:
-	cd ./build && make clean
+	rm -rf ./build
 
 upload:
 	tar cvz -C build glinjona-web-0.0.1 | ssh -l glinjona www2.cose.isu.edu 'cd /home/glinjona/public_html && rm -rf glinjona-web-* && tar xvz'
