@@ -1,15 +1,50 @@
-% Main Page
+% 
 
 ##About Me
-My name is Jonathan Glines. I am a C/C++ programmer with interests in computer
-graphics, games, Japanese, and reading. If I ever had free time I would be
-programming (honestly), reading, updating this website, or hiking.
+My name is Jonathan Glines. I currently am an undergraduate student at Idaho
+State University. I am passionite about computer graphics as well as C/C++
+programming in general.
 
 This website is where I organize/dump the things I have worked on or am
-currently working on. This might be considered a "blog" by some, but it's more
-of a collection of tutorials for subjects that I am trying to understand, as
-well as a portfolio of fun things I've done. Hopefully I can find the time to
-try more things (I have a huge backlog).
+currently working on.
+
+##Recent Projects
+
+###[libmc Isosurface Extraction Library](https://github.com/auntieNeo/libmc)
+
+An implementation of the marching cubes algorithm and related isosurface
+extraction algorithms in C, with C++ bindings. Some algorithms implemented
+include dual marching cubes [as described by
+Nielson](http://dl.acm.org/citation.cfm?id=1034484) as well as a partial
+implementation of [Eric Lengyel's Transvoxel
+Algorithm](http://transvoxel.org/).
+
+The libmc library was developed in conjunction with research on generalized
+Voronoi diagrams performed by Dr. John Edwards at Idaho State University. Dr.
+Edwards' research can be found on [his ISU faculty
+page](http://www2.cose.isu.edu/~edwajohn/).
+
+[![](./productions/libmc_view_frustum_octree_thumb.png "View Frustum Octree")](./productions/libmc_view_frustum_octree.png)
+[![](./productions/libmc_terrain_thumb.png "Terrain")](./productions/libmc_terrain.png)
+
+###[3D WebGL Billiards](./productions/billiards/billiards.html)
+An undergraduate project as part of the Advanced Computer Graphics course at
+Idaho State University. This project implements a fully playable billiards game
+that should work in any web browser supporting WebGL. The game includes simple
+ball and pocket physics, replays, intuitive mouse controls, and [sampled
+distance field
+text](http://www.valvesoftware.com/publications/2007/SIGGRAPH2007_AlphaTestedMagnification.pdf),
+all developed within two weeks.
+
+[![](./productions/billiards_thumb.png "Billiards Screenshot")](./productions/billiards.png)
+
+###[Ray Tracer with Global Lighting](https://github.com/auntieNeo/rt)
+Another undergraduate project for the Advanced Computer Graphics course at ISU.
+This is a ray tracer using Monte Carlo integration to approximate global
+illumination. A k-d tree structure is used to intersect rays with arbitrary
+meshes such as the Stanford Bunny model shown below.
+
+![](./productions/rt_bunny.png)
 
 <!--
 ##Site Map
@@ -29,7 +64,6 @@ This is where I will (eventually) write about personal things unrelated to
 programming.
 -->
 
-##Contacting Me
-If you're interested in something on this site, feel free to comment on one of
-my articles, or email me directly at
+##Contact
+If you would like to contact me about anything, feel free to email me at
 [jonathan@glines.net](mailto:jonathan@glines.net).
