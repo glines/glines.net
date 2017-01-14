@@ -2,7 +2,7 @@
 
 ##About Me
 My name is Jonathan Glines. I currently am an undergraduate student at Idaho
-State University. I am passionite about computer graphics as well as C/C++
+State University. I am passionate about computer graphics as well as C/C++
 programming in general.
 
 This website is where I organize/dump the things I have worked on or am
@@ -18,6 +18,10 @@ include dual marching cubes [as described by
 Nielson](http://dl.acm.org/citation.cfm?id=1034484) as well as a partial
 implementation of [Eric Lengyel's Transvoxel
 Algorithm](http://transvoxel.org/).
+
+[A poster explaining libmc](./productions/libmc/poster.pdf) was created for the
+[Idaho Conference on Undergraduate
+Research](https://academics.boisestate.edu/icur/).
 
 The libmc library was developed in conjunction with research on generalized
 Voronoi diagrams performed by Dr. John Edwards at Idaho State University. Dr.

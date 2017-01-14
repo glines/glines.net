@@ -1,6 +1,3 @@
-[submodule "productions/berb/repo"]
-	path = productions/berb/repo
-	url = git@gitlab.com:auntieneo/berb.git
 [submodule "productions/billiards/repo"]
 	path = productions/billiards/repo
 	url = https://github.com/auntieNeo/billiards
