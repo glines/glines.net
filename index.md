@@ -1,16 +1,26 @@
 % 
 
 ##About Me
-My name is Jonathan Glines. I currently am an undergraduate student at Idaho
-State University. I am passionate about computer graphics as well as C/C++
-programming in general.
+My name is Jonathan Glines. I am passionate about computer graphics as well as
+C/C++ programming in general.
 
 This website is where I organize/dump the things I have worked on or am
 currently working on.
 
 ##Recent Projects
 
-###[libmc Isosurface Extraction Library](https://github.com/auntieNeo/libmc)
+###[Shelltoy Terminal Emulator (WIP)](https://github.com/glines/shelltoy)
+
+A graphically embellished terminal emulator inspired by both
+[Shadertoy](https://www.shadertoy.com) and [GLSL
+Sandbox](http://glslsandbox.com). Shelltoy would not have been possible without
+[libtsm](https://www.freedesktop.org/wiki/Software/kmscon/libtsm/), the
+terminal-emulator state machine library. Shelltoy uses OpenGL, SDL2, and
+Freetype, among other libraries and APIs.
+
+[![](./productions/shelltoy_thumb.png "Terrain")](./productions/shelltoy.png)
+
+###[libmc Isosurface Extraction Library](https://github.com/glines/libmc)
 
 An implementation of the marching cubes algorithm and related isosurface
 extraction algorithms in C, with C++ bindings. Some algorithms implemented
