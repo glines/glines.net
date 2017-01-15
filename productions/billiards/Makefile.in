@@ -7,8 +7,12 @@ all: build
 .PHONY: build
 build:
 	mkdir -p ./build
-	cd $(srcdir)/repo && git archive --format=tar HEAD \
-		| (cd $(shell pwd)/build/ && tar xf -)
+	rsync --filter="exclude,s *.gitignore" \
+		--filter="exclude,s *.gitmodules" \
+		--filter="exclude,s *.git" \
+		--filter="exclude,s *.swp" \
+		--filter="exclude,s *.swo" \
+		$(srcdir)/repo ./build
 
 clean:
 	rm -rf ./build
