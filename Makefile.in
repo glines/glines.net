@@ -14,7 +14,7 @@ VPATH = @srcdir@
 
 all: $(webdistdir)
 
-pages: $(pages_html) articles productions
+pages: $(pages_html) articles productions resume
 
 upload: $(webdistdir).tar.gz
 	echo TODO
@@ -22,6 +22,7 @@ upload: $(webdistdir).tar.gz
 $(webdistdir).tar.gz:
 	tar chzf $(distdir)
 
+.PHONY: $(webdistdir)
 $(webdistdir): pages
 	mkdir -p $(webdistdir)
 	cp index.html $(webdistdir)/
@@ -39,6 +40,7 @@ $(webdistdir): pages
 			cp -r "./productions/$$i/build/"* "$(webdistdir)/productions/$$i/" ; \
 		fi ; \
 	done
+	cp resume.pdf $(webdistdir)/resume.pdf
 
 .SECONDEXPANSION:
 $(pages_html): $$(shell basename -s .html $$@).md \
@@ -62,6 +64,11 @@ articles: include
 .PHONY: productions
 productions: include
 	$(MAKE) -C ./productions
+
+.PHONY: resume
+resume:
+	$(MAKE) -C $(top_srcdir)/resume/OpenFonts
+	cp $(top_srcdir)/resume/OpenFonts/resume.pdf ./resume.pdf
 
 .PHONY: clean
 clean:

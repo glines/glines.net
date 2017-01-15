@@ -1,4 +1,4 @@
-{ stdenv, autoreconfHook, fetchgit, git, pandoc, texlive }:
+{ stdenv, autoreconfHook, fetchgit, pandoc, rsync, texlive }:
 
 stdenv.mkDerivation rec {
   name = "glines.net-${version}";
@@ -6,14 +6,20 @@ stdenv.mkDerivation rec {
 
   buildInputs = [
     autoreconfHook
-    git
     pandoc
+    rsync
     texlive.combined.scheme-full
   ];
 
   src = fetchgit {
     url = "file:///home/auntieneo/code/website/";
-    rev = "refs/tags/${version}";
-    sha256 = "1ygyw3sph11i0yqhir4hw588vw7rq9f8ygy60csy78awp7chdlrf";
+    rev = "refs/tags/master";
+    sha256 = "0bir87dg4sd0gni9za8j4yma5qxp4cvip3kfzaqgic5scmhl6bsp";
+    fetchSubmodules = true;
   };
+
+  installPhase = ''
+    mkdir -p "$out"
+    cp -R glines.net-${version}/* "$out"
+  '';
 }

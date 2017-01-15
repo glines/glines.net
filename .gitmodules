@@ -1,3 +1,6 @@
 [submodule "productions/billiards/repo"]
 	path = productions/billiards/repo
 	url = https://github.com/auntieNeo/billiards
+[submodule "resume"]
+	path = resume
+	url = git@github.com:glines/resume.git
