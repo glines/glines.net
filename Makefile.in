@@ -1,6 +1,6 @@
 version = 0.0.3
-tarname = glines
-webdistdir = $(tarname)-web-$(version)
+tarname = glines.net
+webdistdir = $(tarname)-$(version)
 export sitename = Glines.net
 export siteurl = http://glines.net
 
